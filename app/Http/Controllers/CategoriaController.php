@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Categoria;
 
 class CategoriaController extends Controller
 {
@@ -23,7 +24,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view('novaCategoria');
     }
 
     /**
@@ -34,7 +35,10 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Pegando valores do input para salvar no banco
+        $categoria = new Categoria();
+        $categoria->nome = $request->input('nomeCategoria');
+        $categoria->save();
     }
 
     /**
