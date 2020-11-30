@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-@component('navbarComponent')
+@component('navbarComponent', ["current" => $current])
 @endcomponent
     <div class="container">
        <main role="main">
