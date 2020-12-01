@@ -26,4 +26,5 @@ Route::get('/produtos', [ProdutoController::class, 'index']);
 Route::get('/categorias', [CategoriaController::class, 'index']);
 Route::post('/categorias', [CategoriaController::class, 'store']);
 Route::get('/categorias/novo', [CategoriaController::class, 'create']);
+Route::get('/categorias/excluir/{id}', [CategoriaController::class, 'destroy']);
 

@@ -41,6 +41,7 @@ class CategoriaController extends Controller
         $categoria = new Categoria();
         $categoria->nome = $request->input('nomeCategoria');
         $categoria->save();
+        return redirect('/categorias');
     }
 
     /**
@@ -85,6 +86,12 @@ class CategoriaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //Buscando e categora no banco e apagando registro.
+        $categoria = Categoria::find($id);
+        if(isset($categoria)){
+            $categoria->delete();
+        }
+
+        return redirect('/categorias');
     }
 }
