@@ -4,6 +4,7 @@
 <div class="card border mt-3">
     <div class="card-body">
         <h5 class="card-title">Cadastro de Categorias</h5>
+@if(count($categorias) > 0)
         <table class="table table-ordered table-hover">
             <thead>
                 <tr>
@@ -25,6 +26,7 @@
 @endforeach
             </tbody>
         </table>
+@endif
     </div>
     <div class="card-footer">
         <a href="/categorias/novo" class="btn btn-primary btn-sm">Adicionar nova categoria</a>
