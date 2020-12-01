@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::get('/produtos', [ProdutoController::class, 'index']);
 Route::post('/produtos', [ProdutoController::class, 'store']);
 Route::get('/produtos/novo', [ProdutoController::class, 'create']);
+Route::get('/produtos/excluir/{id}', [ProdutoController::class, 'destroy']);
 
 /* Categorias Routes */
 Route::get('/categorias', [CategoriaController::class, 'index']);
