@@ -66,7 +66,8 @@ class ProdutoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produtos = Produto::find($id);
+        return view('editarProduto', compact('produtos'));
     }
 
     /**
@@ -78,7 +79,15 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $produtos = Produto::find($id);
+        if(isset($produtos)){
+            $produtos->nome = $request->input('nomeProduto');
+            $produtos->estoque = $request->input('estoqueProduto');
+            $produtos->preco = $request->input('precoProduto');
+            $produtos->save();
+        }
+
+        return redirect('/produtos');
     }
 
     /**
